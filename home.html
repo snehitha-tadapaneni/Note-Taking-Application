@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: bisque; 
+    }
+    .title{
+        text-align: center;
+        font-size: x-large;
+        text-shadow: 2cm;
+        color: brown;
+        margin: 2cm;
+    }
+    .note-container {
+        text-align: center; 
+        margin-top: 50px;
+        padding: 20px; 
+        border: 2px solid brown; 
+        border-radius: 10px; 
+        width: 50%; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    .notes{
+        align-items: center;
+        margin: 1cm;
+    }
+    input[type="text"] {
+        width: 80%; 
+       padding: 10px;
+       margin-bottom: 10px;
+       }
+    button {
+        background-color: brown; 
+        color: white; 
+        padding: 10px 20px; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+    }
+    button:hover {
+        background-color: saddlebrown; 
+    }
+</style>
+
+<body>
+    <div class="title">
+        <h3>"Note Taking Application"</h3>
+    </div>
+<div class="note-container">
+    <form action="/" method="POST"> 
+        <input type="text" name="note" placeholder="Enter a note">
+        <button type="submit">Add Note</button>
+    </form>
+</div>
+<div class="notes">
+    <ul>
+    {% for note in notes %}
+        <li>{{ note }}</li>
+    {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
